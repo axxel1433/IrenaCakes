@@ -17,7 +17,7 @@
     html, body {
       width: 100%;
       max-width: 100%;
-      overflow-x: hidden; /* Evita el scroll horizontal y espacios negros */
+      overflow-x: hidden;
       background-color: #1a1a1a;
       color: #fff;
     }
@@ -227,7 +227,7 @@
 
     /* Contenido Principal */
     .hero-body {
-      max-width: 550px;
+      max-width: 580px;
       margin: 120px auto 40px 8%;
       padding: 0 20px;
     }
@@ -246,7 +246,7 @@
       font-weight: 400;
     }
 
-    /* Caja de contacto */
+    /* Caja de contacto con dos botones */
     .search-box-container {
       margin-top: 30px;
       display: flex;
@@ -254,29 +254,43 @@
       align-items: center;
       background: white;
       border-radius: 35px;
-      padding: 6px 6px 6px 20px;
-      max-width: 500px;
+      padding: 5px 6px 5px 20px;
+      max-width: 560px;
       width: 100%;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5);
     }
 
     .phone-display {
-      font-size: 20px;
+      font-size: 19px;
       font-weight: 800;
       color: #222;
+      letter-spacing: 0.5px;
     }
 
-    .btn-cita-main {
+    .contact-buttons-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-contact {
       background-color: #059605;
       color: white;
       border: none;
-      padding: 12px 20px;
-      border-radius: 30px;
-      font-size: 14px;
-      font-weight: bold;
+      padding: 10px 14px;
+      border-radius: 25px;
+      font-size: 13px;
+      font-weight: 700;
       text-decoration: none;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
+      white-space: nowrap;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-contact:hover {
+      background-color: #047704;
     }
 
     /* Barra inferior */
@@ -306,9 +320,7 @@
       color: #059605;
     }
 
-    /* ===================================================
-       REGLAS EXCLUSIVAS PARA MÓVILES (HASTA 768px)
-       =================================================== */
+    /* Ajustes en pantalla móvil */
     @media (max-width: 768px) {
       header {
         flex-direction: column;
@@ -356,6 +368,12 @@
         margin: 25px auto 0 auto;
       }
 
+      .contact-buttons-wrapper {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
       .promo-card {
         position: relative;
         top: 0;
@@ -392,7 +410,7 @@
         <span class="logo-sub">TARRAGONA / BAIX PENEDÈS</span>
       </div>
 
-      <!-- Menú Ajustado -->
+      <!-- Menú -->
       <nav>
         <a href="#">Servicios</a>
         <a href="#">Sobre Nosotros</a>
@@ -429,12 +447,17 @@
         <p>Confían en nosotros, trato 100% profesional.</p>
       </div>
 
-      <!-- Contact Bar -->
+      <!-- Contact Bar con 2 Botones Reducidos -->
       <div class="search-box-container">
         <span class="phone-display">630 12 29 93</span>
-        <a href="https://wa.me/34630122993" target="_blank" class="btn-cita-main">
-          <i class="fa-brands fa-whatsapp"></i> Contacta con nosotros
-        </a>
+        <div class="contact-buttons-wrapper">
+          <a href="tel:630122993" class="btn-contact">
+            <i class="fa-solid fa-phone"></i> Llama ahora
+          </a>
+          <a href="https://wa.me/34630122993" target="_blank" class="btn-contact">
+            <i class="fa-brands fa-whatsapp"></i> Contacta con nosotros
+          </a>
+        </div>
       </div>
     </div>
 
