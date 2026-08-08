@@ -286,7 +286,18 @@
       align-items: center;
       gap: 6px;
       white-space: nowrap;
-      transition: background-color 0.2s ease;
+      transition: all 0.2s ease;
+    }
+
+    /* Estilo exclusivo para el botón de llamada con fondo negro */
+    .btn-contact.btn-call {
+      background-color: #000000;
+      color: #ffffff;
+      border: 1px solid #059605;
+    }
+
+    .btn-contact.btn-call:hover {
+      background-color: #1a1a1a;
     }
 
     .btn-contact:hover {
@@ -447,12 +458,12 @@
         <p>Confían en nosotros, trato 100% profesional.</p>
       </div>
 
-      <!-- Contact Bar con 2 Botones Reducidos -->
+      <!-- Contact Bar con Botón Llama Ahora en Negro -->
       <div class="search-box-container">
         <span class="phone-display">630 12 29 93</span>
         <div class="contact-buttons-wrapper">
-          <a href="tel:630122993" class="btn-contact">
-            <i class="fa-solid fa-phone"></i> Llama ahora
+          <a href="tel:630122993" class="btn-contact btn-call">
+            <i class="fa-solid fa-phone" style="color: #059605;"></i> Llama ahora
           </a>
           <a href="https://wa.me/34630122993" target="_blank" class="btn-contact">
             <i class="fa-brands fa-whatsapp"></i> Contacta con nosotros
