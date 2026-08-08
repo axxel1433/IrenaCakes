@@ -157,11 +157,11 @@
       gap: 6px;
     }
 
-    /* Promo Card ampliada para mantener texto en una sola línea */
+    /* Promo Card */
     .promo-card {
       position: absolute;
-      top: 340px;
-      right: 120px;
+      top: 240px;
+      right: 60px;
       width: 420px;
       background: #000;
       border: 2px solid #059605;
@@ -319,22 +319,73 @@
       color: #059605;
     }
 
-    /* Responsividad */
-    @media (max-width: 1024px) {
-      .promo-card {
-        position: relative;
-        top: 0;
-        right: 0;
-        margin: 30px auto;
-        width: 90%;
-        max-width: 420px;
+    /* ===================================================
+       AJUSTES PARA MÓVILES Y TABLETS (RESPONSIVE DESIGN)
+       =================================================== */
+    @media (max-width: 992px) {
+      header {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        text-align: center;
+        padding: 15px 20px;
       }
+
+      header div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav {
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .header-whatsapp-btn {
+        margin: 0 auto;
+      }
+
       .baliza-widget {
         position: relative;
         top: 0;
         right: 0;
-        margin: 20px auto;
+        margin: 20px auto 0 auto;
         width: fit-content;
+      }
+
+      .hero-body {
+        margin: 30px auto;
+        text-align: center;
+      }
+
+      .hero-title {
+        font-size: 32px;
+      }
+
+      .promo-card {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin: 20px auto 40px auto;
+        width: 90%;
+        max-width: 380px;
+      }
+
+      .promo-title {
+        font-size: 20px;
+      }
+
+      .search-box-container {
+        flex-direction: column;
+        gap: 15px;
+        border-radius: 20px;
+        padding: 15px;
+      }
+
+      .services-bar {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
       }
     }
   </style>
@@ -376,19 +427,6 @@
       </div>
     </div>
 
-    <!-- Promo Card -->
-    <div class="promo-card">
-      <div class="oferta-tag">
-        <i class="fa-solid fa-fire"></i> Oferta Limitada
-      </div>
-
-      <div class="promo-title">REVISION <span>POST-COMPRA</span></div>
-
-      <div class="price-arrow-badge">
-        45<span class="euro-symbol">€</span>
-      </div>
-    </div>
-
     <!-- Main Content -->
     <div class="hero-body">
       <h1 class="hero-title">
@@ -406,6 +444,19 @@
         <a href="https://wa.me/34630122993" target="_blank" class="btn-cita-main">
           <i class="fa-brands fa-whatsapp"></i> Contacta con nosotros
         </a>
+      </div>
+    </div>
+
+    <!-- Promo Card -->
+    <div class="promo-card">
+      <div class="oferta-tag">
+        <i class="fa-solid fa-fire"></i> Oferta Limitada
+      </div>
+
+      <div class="promo-title">REVISION <span>POST-COMPRA</span></div>
+
+      <div class="price-arrow-badge">
+        45<span class="euro-symbol">€</span>
       </div>
     </div>
 
