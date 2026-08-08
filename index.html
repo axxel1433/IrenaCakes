@@ -3,258 +3,424 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Repostería Artesanal | Dulces Momentos</title>
-  
+  <title>ITEUVE FACIL - Tarragona / Baix Penedès</title>
+  <!-- Font Awesome para iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* ==========================================
-       ESTILOS GENERALES (Colores y Tipografía)
-       ========================================== */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #fffaf6; /* Fondo crema suave */
-      color: #4a3b32; /* Texto color chocolate */
-      line-height: 1.6;
+      background-color: #1a1a1a;
+      color: #fff;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* ==========================================
-       ENCABEZADO Y NAVEGACIÓN
-       ========================================== */
-    header {
-      background-color: #ffffff;
-      padding: 1rem 2rem;
+    /* Hero Banner Container */
+    .hero {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.65)), 
+                  url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
+    }
+
+    /* Header / Navbar */
+    header {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
       align-items: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      padding: 20px 40px;
+      background: rgba(0, 0, 0, 0.4);
     }
 
     .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #d87093; /* Rosa pastel */
+      font-size: 26px;
+      font-weight: 800;
+      color: #ffffff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo span.plus {
+      color: #059605;
+      font-size: 20px;
+      vertical-align: super;
+      margin-left: 2px;
+    }
+
+    .logo-sub {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: #059605;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 25px;
     }
 
     nav a {
-      margin-left: 1.5rem;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 13px;
       font-weight: 600;
-      transition: color 0.3s;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
-      color: #d87093;
+      color: #059605;
     }
 
-    /* ==========================================
-       SECCIÓN PRINCIPAL (HERO)
-       ========================================== */
-    .hero {
-      background-color: #fce4ec; /* Fondo rosa claro */
-      text-align: center;
-      padding: 4rem 1.5rem;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: #4a3b32;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto 1.5rem auto;
-    }
-
-    .btn-whatsapp {
-      display: inline-block;
-      background-color: #25d366;
+    .header-whatsapp-btn {
+      background-color: #059605;
       color: white;
-      padding: 0.8rem 1.8rem;
-      border-radius: 25px;
+      padding: 10px 18px;
+      border-radius: 20px;
+      text-decoration: none;
       font-weight: bold;
-      transition: transform 0.2s;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background-color 0.2s ease;
     }
 
-    .btn-whatsapp:hover {
-      transform: scale(1.05);
+    .header-whatsapp-btn:hover {
+      background-color: #047704;
     }
 
-    /* ==========================================
-       SECCIÓN DE PRODUCTOS (CATÁLOGO)
-       ========================================== */
-    .productos {
-      max-width: 1100px;
-      margin: 3rem auto;
-      padding: 0 1.5rem;
+    /* Floating Widget: Baliza V16 */
+    .baliza-widget {
+      position: absolute;
+      top: 90px;
+      right: 40px;
+      background: #059605;
+      border-radius: 30px 10px 10px 30px;
+      display: flex;
+      align-items: center;
+      padding: 6px 16px 6px 6px;
+      gap: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      z-index: 10;
+    }
+
+    .baliza-img {
+      width: 50px;
+      height: 50px;
+      background: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .baliza-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: radial-gradient(circle, red 40%, white 41%, white 60%, #ccc 61%);
+      border: 2px solid #ddd;
+    }
+
+    .baliza-content h4 {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .btn-comprar {
+      background: #111111;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 15px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Promo Card ampliada para mantener texto en una sola línea */
+    .promo-card {
+      position: absolute;
+      top: 340px;
+      right: 120px;
+      width: 420px;
+      background: #000;
+      border: 2px solid #059605;
+      border-radius: 20px;
+      padding: 25px 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
+      z-index: 5;
     }
 
-    .productos h2 {
-      font-size: 2rem;
-      margin-bottom: 2rem;
-      color: #d87093;
+    .oferta-tag {
+      background: #ff0000;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 5px 15px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 2px 10px rgba(255,0,0,0.4);
     }
 
-    .grid-productos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
+    .promo-title {
+      font-size: 24px;
+      font-weight: 900;
+      font-style: italic;
+      color: #fff;
+      text-transform: uppercase;
+      line-height: 1.1;
+      white-space: nowrap;
     }
 
-    .tarjeta {
+    .promo-title span {
+      color: #059605;
+    }
+
+    /* Arrow Price Badge */
+    .price-arrow-badge {
+      background: #059605;
+      color: #000;
+      padding: 10px 30px 10px 20px;
+      font-size: 54px;
+      font-weight: 900;
+      clip-path: polygon(0% 0%, 80% 0%, 100% 50%, 80% 100%, 0% 100%);
+      width: 85%;
+      margin-top: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+
+    .price-arrow-badge .euro-symbol {
+      font-size: 32px;
+      margin-left: 4px;
+    }
+
+    /* Main Content Area */
+    .hero-body {
+      max-width: 550px;
+      margin: 120px auto 40px 8%;
+      padding: 0 20px;
+    }
+
+    .hero-title {
+      font-size: 46px;
+      font-weight: 800;
+      line-height: 1.15;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero-description p {
+      font-size: 20px;
+      margin-bottom: 8px;
+      font-weight: 400;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    }
+
+    /* Contact Section */
+    .search-box-container {
+      margin-top: 35px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-      transition: transform 0.3s;
+      border-radius: 35px;
+      padding: 6px 6px 6px 25px;
+      max-width: 520px;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5);
     }
 
-    .tarjeta:hover {
-      transform: translateY(-5px);
+    .phone-display {
+      font-size: 22px;
+      font-weight: 800;
+      color: #222;
+      letter-spacing: 1px;
     }
 
-    .tarjeta img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .tarjeta-info {
-      padding: 1.2rem;
-    }
-
-    .tarjeta-info h3 {
-      margin-bottom: 0.5rem;
-    }
-
-    .precio {
-      font-weight: bold;
-      color: #d87093;
-      font-size: 1.1rem;
-      margin-top: 0.5rem;
-    }
-
-    /* ==========================================
-       SOBRE MÍ
-       ========================================== */
-    .sobre-mi {
-      background-color: #ffffff;
-      padding: 3rem 1.5rem;
-      text-align: center;
-    }
-
-    .sobre-mi-contenido {
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .sobre-mi h2 {
-      margin-bottom: 1rem;
-      color: #d87093;
-    }
-
-    /* ==========================================
-       PIE DE PÁGINA (FOOTER)
-       ========================================== */
-    footer {
-      background-color: #4a3b32;
+    .btn-cita-main {
+      background-color: #059605;
       color: white;
-      text-align: center;
-      padding: 2rem 1.5rem;
-      margin-top: 3rem;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 30px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
     }
 
-    footer p {
-      margin-bottom: 0.5rem;
-      font-size: 0.9rem;
+    .btn-cita-main:hover {
+      background-color: #047704;
+    }
+
+    /* Bottom Services Bar */
+    .services-bar {
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 22px 10%;
+      border-top: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .service-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .service-item:hover {
+      color: #059605;
+    }
+
+    .service-item i {
+      font-size: 26px;
+      color: #059605;
+    }
+
+    /* Responsividad */
+    @media (max-width: 1024px) {
+      .promo-card {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin: 30px auto;
+        width: 90%;
+        max-width: 420px;
+      }
+      .baliza-widget {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin: 20px auto;
+        width: fit-content;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Encabezado con navegación -->
-  <header>
-    <div class="logo">🍰 Irena Cakes</div>
-    <nav>
-      <a href="#productos">Productos</a>
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </header>
-
-  <!-- Sección principal de bienvenida -->
-  <section class="hero">
-    <h1>Endulza tus momentos especiales</h1>
-    <p>Tartas, galletas y todo tipo de postres caseros con ingredientes de primera calidad y mucho amor.</p>
-    <a href="https://wa.me/34685204329" target="_blank" class="btn-whatsapp">💬 Haz tu pedido por WhatsApp</a>
-  </section>
-
-  <!-- Catálogo de Productos -->
-  <section id="productos" class="productos">    
-    <h2>Nuestras Especialidades</h2>
-    
-    <div class="grid-productos">
-      <!-- Producto 1 -->
-      <div class="tarjeta">
-        <img src="galleta_oreo_v2.png" alt="Galleta Oreo">
-        <div class="tarjeta-info">
-          <h3>Galleta de Oreo</h3>
-          <p>Galleta rellena de Oreo y decoración en la superfície.</p>
-          <p class="precio">Desde 4€</p>
-        </div>
+  <div class="hero">
+    <!-- Header -->
+    <header>
+      <div>
+        <a href="#" class="logo">ITEUVE FACIL<span class="plus">+</span></a>
+        <span class="logo-sub">TARRAGONA / BAIX PENEDÈS</span>
       </div>
 
-      <!-- Producto 2 -->
-      <div class="tarjeta">
-        <img src="cheesecake_v2.png" alt="Cheesecake">
-        <div class="tarjeta-info">
-          <h3>Cheesecake</h3>
-          <p>Tarta de queso con base de galleta y superficie de frutos rojos.</p>
-          <p class="precio">Desde 14€</p>
-        </div>
-      </div>
+      <!-- Menú Centrado -->
+      <nav>
+        <a href="#">Servicios</a>
+        <a href="#">Sobre Nosotros</a>
+        <a href="#">Reseñas</a>
+        <a href="#">Contacto</a>
+      </nav>
 
-      <!-- Producto 3 -->
-      <div class="tarjeta">
-        <img src="vaso_kinder_v2.png" alt="vaso kinder">
-        <div class="tarjeta-info">
-          <h3>Yogur de Kinder</h3>
-          <p>Yogur de Kinder Bueno con base de galleta y superficie de chocolate con decoración.</p>
-          <p class="precio">Desde 6€</p>
-        </div>
+      <!-- Botón WhatsApp a la Derecha -->
+      <a href="https://wa.me/34630122993" target="_blank" class="header-whatsapp-btn">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+      </a>
+    </header>
+
+    <!-- Baliza V16 Widget -->
+    <div class="baliza-widget">
+      <div class="baliza-img">
+        <div class="baliza-circle"></div>
+      </div>
+      <div class="baliza-content">
+        <h4>Baliza V16</h4>
+        <button class="btn-comprar">
+          Comprar ahora <i class="fa-solid fa-cart-shopping" style="color: #059605;"></i>
+        </button>
       </div>
     </div>
-  </section>
 
-  <!-- Sección Sobre mí -->
-  <section id="sobre-mi" class="sobre-mi">
-    <div class="sobre-mi-contenido">
-      <h2>Detrás de la Cocina</h2>
-      <p>¡Hola! Soy la repostera detrás de este proyecto. Mi pasión por la pastelería comenzó desde muy pequeña, y hoy convierto esa pasión en recetas únicas que alegran los eventos y reuniones de nuestros clientes.</p>
+    <!-- Promo Card -->
+    <div class="promo-card">
+      <div class="oferta-tag">
+        <i class="fa-solid fa-fire"></i> Oferta Limitada
+      </div>
+
+      <div class="promo-title">REVISION <span>POST-COMPRA</span></div>
+
+      <div class="price-arrow-badge">
+        45<span class="euro-symbol">€</span>
+      </div>
     </div>
-  </section>
 
-  <!-- Pie de página con contacto -->
-  <footer id="contacto">
-    <p><strong>Irena Cakes - Repostería casera</strong></p>
-    <p>📍 Envíos y entregas locales</p>
-    <p>📱 Pedidos: +34 685 204 329</p>
-    <p>© 2026 Todos los derechos reservados.</p>
-  </footer>
+    <!-- Main Content -->
+    <div class="hero-body">
+      <h1 class="hero-title">
+        Recogida y entrega<br><span style="color: #059605;">a domicilio</span>
+      </h1>
+
+      <div class="hero-description">
+        <p>Una empresa pionera en Tarragona.</p>
+        <p>Confían en nosotros, trato 100% profesional.</p>
+      </div>
+
+      <!-- Contact Bar -->
+      <div class="search-box-container">
+        <span class="phone-display">630 12 29 93</span>
+        <a href="https://wa.me/34630122993" target="_blank" class="btn-cita-main">
+          <i class="fa-brands fa-whatsapp"></i> Contacta con nosotros
+        </a>
+      </div>
+    </div>
+
+    <!-- Bottom Options Bar -->
+    <div class="services-bar">
+      <a href="#" class="service-item">
+        <i class="fa-regular fa-calendar-check"></i>
+        <span>Agenda una llamada</span>
+      </a>
+      <a href="#" class="service-item">
+        <i class="fa-solid fa-briefcase"></i>
+        <span>Plan para empresas</span>
+      </a>
+    </div>
+  </div>
 
 </body>
 </html>
